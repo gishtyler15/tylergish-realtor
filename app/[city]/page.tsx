@@ -55,27 +55,27 @@ export default async function CityPage({
       />
 
       {/* HERO */}
-      <section className="bg-navy-800 text-white">
-        <div className="container-page py-16 md:py-20">
-          <p className="eyebrow text-brass-400 mb-4">
+      <section className="bg-white border-b border-slate-100">
+        <div className="container-page py-14 md:py-18">
+          <p className="eyebrow mb-4">
             {city.county} &middot; Northwest Ohio
           </p>
-          <h1 className="font-display text-4xl md:text-5xl leading-tight max-w-3xl">
+          <h1 className="font-display text-4xl md:text-5xl leading-tight max-w-3xl text-navy">
             {city.name}, Ohio REALTOR®
           </h1>
-          <p className="mt-4 text-lg text-white/70 max-w-2xl">
+          <p className="mt-4 text-lg text-slate max-w-2xl">
             {city.heroLine}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={`tel:${siteConfig.phoneRaw}`}
-              className="rounded-sm bg-brass px-6 py-3 text-sm font-semibold text-white hover:bg-brass-700 transition-colors"
+              className="rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-600 transition-colors"
             >
               Call {siteConfig.phone}
             </a>
             <a
               href="#lead-form"
-              className="rounded-sm border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+              className="rounded-full border border-navy/15 px-6 py-3 text-sm font-semibold text-navy hover:bg-navy-50 transition-colors"
             >
               Get Started
             </a>
@@ -126,7 +126,7 @@ export default async function CityPage({
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {city.attractions.map((a) => (
-                <div key={a.name} className="border border-slate-100 rounded-sm p-4">
+                <div key={a.name} className="border border-slate-100 rounded-xl p-4">
                   <p className="font-semibold text-navy text-sm mb-1">{a.name}</p>
                   <p className="text-sm text-slate">{a.note}</p>
                 </div>
@@ -155,7 +155,7 @@ export default async function CityPage({
 
         {/* SIDEBAR LEAD FORM */}
         <aside id="lead-form" className="lg:sticky lg:top-28 self-start">
-          <div className="rounded-sm border border-slate-100 p-6 md:p-7 shadow-sm">
+          <div className="rounded-2xl border border-slate-100 p-6 md:p-7 shadow-sm">
             <h3 className="font-display text-xl text-navy mb-1">
               Looking in {city.name}?
             </h3>

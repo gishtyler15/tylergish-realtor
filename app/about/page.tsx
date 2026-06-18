@@ -14,7 +14,7 @@ export default function AboutPage() {
     <main>
       <section className="container-page py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden">
+          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
             <Image
               src="/images/tyler-headshot.png"
               alt="Tyler Gish, REALTOR® with eXp Realty"
@@ -60,13 +60,13 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
                 href="/contact"
-                className="rounded-sm bg-navy px-7 py-3.5 text-center text-sm font-semibold text-white hover:bg-navy-600 transition-colors"
+                className="rounded-full bg-navy px-7 py-3.5 text-center text-sm font-semibold text-white hover:bg-navy-600 transition-colors"
               >
                 Schedule a Consultation
               </Link>
               <a
                 href={`tel:${siteConfig.phoneRaw}`}
-                className="rounded-sm border border-navy/20 px-7 py-3.5 text-center text-sm font-semibold text-navy hover:bg-navy-50 transition-colors"
+                className="rounded-full border border-navy/20 px-7 py-3.5 text-center text-sm font-semibold text-navy hover:bg-navy-50 transition-colors"
               >
                 Call {siteConfig.phone}
               </a>

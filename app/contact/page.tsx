@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <section className="bg-navy-800 text-white">
+      <section className="bg-white border-b border-slate-100">
         <div className="container-page py-16 md:py-20">
-          <p className="eyebrow text-brass-400 mb-4">Contact</p>
-          <h1 className="font-display text-4xl md:text-5xl leading-tight max-w-2xl">
+          <p className="eyebrow mb-4">Contact</p>
+          <h1 className="font-display text-4xl md:text-5xl leading-tight text-navy max-w-2xl">
             Let&apos;s talk about your next move.
           </h1>
         </div>
@@ -29,7 +29,7 @@ export default function ContactPage() {
         </div>
 
         <div className="space-y-8">
-          <div className="rounded-sm border border-slate-100 p-7">
+          <div className="rounded-2xl border border-slate-100 p-7">
             <h3 className="font-display text-xl text-navy mb-4">
               Direct Contact
             </h3>
@@ -60,7 +60,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-sm overflow-hidden border border-slate-100">
+          <div className="rounded-2xl overflow-hidden border border-slate-100">
             <iframe
               title="Northwest Ohio service area map"
               width="100%"

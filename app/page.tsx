@@ -3,53 +3,56 @@ import Image from "next/image";
 import { cities, siteConfig } from "@/data/cities";
 import BuyerLeadForm from "@/components/BuyerLeadForm";
 import SellerLeadForm from "@/components/SellerLeadForm";
-import ServiceAreaMap from "@/components/ServiceAreaMap";
 
 export default function HomePage() {
   return (
     <main>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-navy-800">
-        <div className="absolute inset-0 opacity-[0.07]">
-          <ServiceAreaMap variant="hero" />
-        </div>
-        <div className="container-page relative py-20 md:py-28 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-          <div className="animate-fade-up">
-            <p className="eyebrow text-brass-400 mb-5">
-              Army Veteran &middot; REALTOR® &middot; eXp Realty
+      <section className="relative overflow-hidden">
+        <div className="container-page relative pt-14 pb-16 md:pt-20 md:pb-20 grid grid-cols-1 lg:grid-cols-[1fr_0.85fr] gap-14 items-center">
+          <div className="animate-fade-up order-2 lg:order-1">
+            <p className="eyebrow mb-5">
+              Army Veteran &middot; REALTOR®
             </p>
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.08] text-white">
-              Helping Northwest Ohio Families Buy and Sell With Confidence
+            <h1 className="font-display text-[2.6rem] sm:text-5xl md:text-[3.4rem] leading-[1.06] text-navy tracking-tight">
+              Helping Northwest Ohio families buy and sell with confidence.
             </h1>
-            <p className="mt-6 text-lg text-white/70 max-w-xl">
-              Serving Clyde, Fremont, Sandusky, Port Clinton, and surrounding
-              communities — with the same standards Tyler held to in the
-              Army: show up, communicate clearly, and finish what you start.
+            <p className="mt-6 text-lg text-slate max-w-md leading-relaxed">
+              Serving Clyde, Fremont, Sandusky, Port Clinton, and the
+              surrounding communities — with the same standards Tyler held
+              to in the Army.
             </p>
-            <div className="mt-9 flex flex-col sm:flex-row gap-3">
+            <div className="mt-9 flex flex-wrap gap-3">
               <Link
                 href="/buyers"
-                className="rounded-sm bg-brass px-7 py-3.5 text-center text-sm font-semibold text-white hover:bg-brass-700 transition-colors"
+                className="rounded-full bg-navy px-7 py-3.5 text-center text-sm font-semibold text-white hover:bg-navy-600 transition-colors"
               >
                 Search Homes
               </Link>
               <Link
                 href="/home-valuation"
-                className="rounded-sm border border-white/30 px-7 py-3.5 text-center text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+                className="rounded-full border border-navy/15 px-7 py-3.5 text-center text-sm font-semibold text-navy hover:bg-navy-50 transition-colors"
               >
                 Get Home Value
               </Link>
-              <Link
-                href="/contact"
-                className="rounded-sm px-7 py-3.5 text-center text-sm font-semibold text-white/80 hover:text-white transition-colors"
-              >
-                Contact Tyler →
-              </Link>
+            </div>
+
+            <div className="mt-12 flex items-center gap-3">
+              <span className="text-xs uppercase tracking-[0.14em] text-slate-400">
+                Member of
+              </span>
+              <Image
+                src="/images/exp-realty-logo.png"
+                alt="eXp Realty"
+                width={110}
+                height={58}
+                className="h-7 w-auto object-contain"
+              />
             </div>
           </div>
 
-          <div className="relative animate-fade-in justify-self-center">
-            <div className="relative w-full max-w-sm aspect-[4/5] rounded-sm overflow-hidden ring-1 ring-white/10">
+          <div className="relative animate-fade-in justify-self-center order-1 lg:order-2">
+            <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
                 src="/images/tyler-headshot.png"
                 alt="Tyler Gish, REALTOR® with eXp Realty"
@@ -58,10 +61,26 @@ export default function HomePage() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-5 -left-5 bg-white rounded-sm px-5 py-4 shadow-xl hidden sm:block">
-              <p className="font-display text-2xl text-navy leading-none">7</p>
-              <p className="text-xs text-slate mt-1 max-w-[120px]">
-                Northwest Ohio communities served
+          </div>
+        </div>
+
+        {/* QUIET STAT STRIP */}
+        <div className="border-y border-slate-100 bg-navy-50/60">
+          <div className="container-page py-7 grid grid-cols-3 gap-4 text-center">
+            <div>
+              <p className="font-display text-2xl md:text-3xl text-navy">7</p>
+              <p className="text-xs md:text-sm text-slate mt-1">
+                Markets served
+              </p>
+            </div>
+            <div className="border-x border-slate-200">
+              <p className="font-display text-2xl md:text-3xl text-navy">eXp</p>
+              <p className="text-xs md:text-sm text-slate mt-1">Realty</p>
+            </div>
+            <div>
+              <p className="font-display text-2xl md:text-3xl text-navy">VA</p>
+              <p className="text-xs md:text-sm text-slate mt-1">
+                Loan specialist
               </p>
             </div>
           </div>
@@ -113,7 +132,7 @@ export default function HomePage() {
             <Link
               key={city.slug}
               href={`/${city.slug}`}
-              className="group relative overflow-hidden rounded-sm border border-slate-100 bg-white p-6 hover:border-brass-400 hover:shadow-lg transition-all"
+              className="group relative overflow-hidden rounded-xl border border-slate-100 bg-white p-6 hover:border-brass-400 hover:shadow-lg transition-all"
             >
               <p className="font-display text-xl text-navy mb-1.5">
                 {city.name}
@@ -195,7 +214,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="rounded-sm border border-slate-100 p-7 md:p-8">
+          <div className="rounded-2xl border border-slate-100 p-7 md:p-8">
             <h3 className="font-display text-xl text-navy mb-1">
               I&apos;m Buying
             </h3>
@@ -204,7 +223,7 @@ export default function HomePage() {
             </p>
             <BuyerLeadForm />
           </div>
-          <div className="rounded-sm border border-slate-100 p-7 md:p-8">
+          <div className="rounded-2xl border border-slate-100 p-7 md:p-8">
             <h3 className="font-display text-xl text-navy mb-1">
               I&apos;m Selling
             </h3>
@@ -250,7 +269,7 @@ export default function HomePage() {
                 detail: "Home seller, Sandusky",
               },
             ].map((t, i) => (
-              <div key={i} className="bg-white rounded-sm p-7 border border-slate-100">
+              <div key={i} className="bg-white rounded-xl p-7 border border-slate-100">
                 <div className="flex gap-1 text-brass mb-4" aria-hidden>
                   {Array.from({ length: 5 }).map((_, j) => (
                     <svg key={j} width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -280,13 +299,13 @@ export default function HomePage() {
         <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/contact"
-            className="rounded-sm bg-navy px-8 py-3.5 text-sm font-semibold text-white hover:bg-navy-600 transition-colors"
+            className="rounded-full bg-navy px-8 py-3.5 text-sm font-semibold text-white hover:bg-navy-600 transition-colors"
           >
             Schedule Consultation
           </Link>
           <a
             href={`tel:${siteConfig.phoneRaw}`}
-            className="rounded-sm border border-navy/20 px-8 py-3.5 text-sm font-semibold text-navy hover:bg-navy-50 transition-colors"
+            className="rounded-full border border-navy/20 px-8 py-3.5 text-sm font-semibold text-navy hover:bg-navy-50 transition-colors"
           >
             Contact Tyler
           </a>

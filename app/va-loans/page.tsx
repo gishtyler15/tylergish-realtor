@@ -46,15 +46,15 @@ export default function VALoansPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }}
       />
 
-      <section className="bg-navy-800 text-white">
+      <section className="bg-white border-b border-slate-100">
         <div className="container-page py-16 md:py-20">
-          <p className="eyebrow text-brass-400 mb-4">
+          <p className="eyebrow mb-4">
             Veteran Specialist &middot; VA Loans
           </p>
-          <h1 className="font-display text-4xl md:text-5xl leading-tight max-w-2xl">
+          <h1 className="font-display text-4xl md:text-5xl leading-tight text-navy max-w-2xl">
             VA Loan Realtor, Northwest Ohio
           </h1>
-          <p className="mt-4 text-lg text-white/70 max-w-2xl">
+          <p className="mt-4 text-lg text-slate max-w-2xl">
             Tyler is an Army veteran himself. He knows the VA loan process
             from both sides — as a former service member and as the agent
             guiding you through it.
@@ -170,7 +170,7 @@ export default function VALoansPage() {
         </div>
 
         <aside className="lg:sticky lg:top-28 self-start">
-          <div className="rounded-sm border border-slate-100 p-7 shadow-sm">
+          <div className="rounded-2xl border border-slate-100 p-7 shadow-sm">
             <h3 className="font-display text-xl text-navy mb-1">
               Using a VA Loan?
             </h3>

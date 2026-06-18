@@ -34,13 +34,13 @@ const steps = [
 export default function BuyersPage() {
   return (
     <main>
-      <section className="bg-navy-800 text-white">
+      <section className="bg-white border-b border-slate-100">
         <div className="container-page py-16 md:py-20">
-          <p className="eyebrow text-brass-400 mb-4">For Buyers</p>
-          <h1 className="font-display text-4xl md:text-5xl leading-tight max-w-2xl">
+          <p className="eyebrow mb-4">For Buyers</p>
+          <h1 className="font-display text-4xl md:text-5xl leading-tight text-navy max-w-2xl">
             Buying a home in Northwest Ohio, done right.
           </h1>
-          <p className="mt-4 text-lg text-white/70 max-w-2xl">
+          <p className="mt-4 text-lg text-slate max-w-2xl">
             Whether it&apos;s your first home, a VA loan purchase, or a move
             to be closer to family, Tyler makes sure you understand every
             step before you take it.
@@ -69,7 +69,7 @@ export default function BuyersPage() {
             ))}
           </div>
 
-          <div className="mt-14 bg-navy-50 rounded-sm p-7">
+          <div className="mt-14 bg-navy-50 rounded-2xl p-7">
             <h3 className="font-display text-xl text-navy mb-3">
               First-Time Buyer?
             </h3>
@@ -101,7 +101,7 @@ export default function BuyersPage() {
         </div>
 
         <aside className="lg:sticky lg:top-28 self-start">
-          <div className="rounded-sm border border-slate-100 p-7 shadow-sm">
+          <div className="rounded-2xl border border-slate-100 p-7 shadow-sm">
             <h3 className="font-display text-xl text-navy mb-1">
               Start Your Search
             </h3>

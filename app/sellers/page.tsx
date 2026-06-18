@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 export default function SellersPage() {
   return (
     <main>
-      <section className="bg-navy-800 text-white">
+      <section className="bg-white border-b border-slate-100">
         <div className="container-page py-16 md:py-20">
-          <p className="eyebrow text-brass-400 mb-4">For Sellers</p>
-          <h1 className="font-display text-4xl md:text-5xl leading-tight max-w-2xl">
+          <p className="eyebrow mb-4">For Sellers</p>
+          <h1 className="font-display text-4xl md:text-5xl leading-tight text-navy max-w-2xl">
             Sell with a strategy, not a guess.
           </h1>
-          <p className="mt-4 text-lg text-white/70 max-w-2xl">
+          <p className="mt-4 text-lg text-slate max-w-2xl">
             Tyler combines accurate local pricing, professional marketing,
             and direct negotiation to get your home sold for the right
             price.
@@ -90,7 +90,7 @@ export default function SellersPage() {
             </p>
           </div>
 
-          <div className="bg-navy-50 rounded-sm p-7">
+          <div className="bg-navy-50 rounded-2xl p-7">
             <h3 className="font-display text-xl text-navy mb-3">
               Not sure what your home is worth?
             </h3>
@@ -100,7 +100,7 @@ export default function SellersPage() {
             </p>
             <Link
               href="/home-valuation"
-              className="inline-flex rounded-sm bg-brass px-6 py-3 text-sm font-semibold text-white hover:bg-brass-700 transition-colors"
+              className="inline-flex rounded-full bg-brass px-6 py-3 text-sm font-semibold text-white hover:bg-brass-700 transition-colors"
             >
               Get My Home Value
             </Link>
@@ -108,7 +108,7 @@ export default function SellersPage() {
         </div>
 
         <aside className="lg:sticky lg:top-28 self-start">
-          <div className="rounded-sm border border-slate-100 p-7 shadow-sm">
+          <div className="rounded-2xl border border-slate-100 p-7 shadow-sm">
             <h3 className="font-display text-xl text-navy mb-1">
               Get Your Home Value
             </h3>

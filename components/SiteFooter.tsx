@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cities, siteConfig } from "@/data/cities";
 
 export default function SiteFooter() {
@@ -8,6 +9,13 @@ export default function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
             <div className="font-display text-2xl mb-3">Tyler Gish</div>
+            <Image
+              src="/images/exp-realty-logo.png"
+              alt="eXp Realty"
+              width={90}
+              height={48}
+              className="h-7 w-auto object-contain mb-4 brightness-0 invert opacity-80"
+            />
             <p className="text-sm text-white/60 mb-4">
               REALTOR® with eXp Realty. Army veteran serving Northwest Ohio
               buyers and sellers with integrity and clear communication.

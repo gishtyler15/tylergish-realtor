@@ -30,7 +30,7 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-sm bg-navy-50 border border-navy-100 p-6 text-center">
+      <div className="rounded-lg bg-navy-50 border border-navy-100 p-6 text-center">
         <p className="font-display text-xl text-navy mb-1">Message sent.</p>
         <p className="text-sm text-slate">Tyler typically replies within a few hours.</p>
       </div>
@@ -45,7 +45,7 @@ export default function ContactForm() {
           <input
             name="name"
             required
-            className="w-full rounded-sm border border-slate-200 px-4 py-2.5 text-navy focus:border-navy outline-none"
+            className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-navy focus:border-navy outline-none"
           />
         </div>
         <div>
@@ -54,7 +54,7 @@ export default function ContactForm() {
             name="phone"
             type="tel"
             required
-            className="w-full rounded-sm border border-slate-200 px-4 py-2.5 text-navy focus:border-navy outline-none"
+            className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-navy focus:border-navy outline-none"
           />
         </div>
       </div>
@@ -64,7 +64,7 @@ export default function ContactForm() {
           name="email"
           type="email"
           required
-          className="w-full rounded-sm border border-slate-200 px-4 py-2.5 text-navy focus:border-navy outline-none"
+          className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-navy focus:border-navy outline-none"
         />
       </div>
       <div>
@@ -75,13 +75,13 @@ export default function ContactForm() {
           name="message"
           rows={4}
           required
-          className="w-full rounded-sm border border-slate-200 px-4 py-2.5 text-navy focus:border-navy outline-none"
+          className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-navy focus:border-navy outline-none"
         />
       </div>
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full rounded-sm bg-navy py-3.5 text-sm font-semibold text-white hover:bg-navy-600 transition-colors disabled:opacity-60"
+        className="w-full rounded-lg bg-navy py-3.5 text-sm font-semibold text-white hover:bg-navy-600 transition-colors disabled:opacity-60"
       >
         {status === "loading" ? "Sending…" : "Send Message"}
       </button>

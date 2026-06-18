@@ -31,7 +31,7 @@ export default function SellerLeadForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-sm bg-navy-50 border border-navy-100 p-6 text-center">
+      <div className="rounded-lg bg-navy-50 border border-navy-100 p-6 text-center">
         <p className="font-display text-xl text-navy mb-1">Thanks — got it.</p>
         <p className="text-sm text-slate">
           Tyler will follow up with your home value estimate and next steps.
@@ -51,7 +51,7 @@ export default function SellerLeadForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full rounded-sm bg-brass py-3.5 text-sm font-semibold text-white hover:bg-brass-700 transition-colors disabled:opacity-60"
+        className="w-full rounded-lg bg-brass py-3.5 text-sm font-semibold text-white hover:bg-brass-700 transition-colors disabled:opacity-60"
       >
         {status === "loading" ? "Sending…" : "Get My Home Value"}
       </button>
@@ -87,7 +87,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-sm border border-slate-200 px-4 py-2.5 text-navy placeholder:text-slate-400 focus:border-navy outline-none"
+        className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-navy placeholder:text-slate-400 focus:border-navy outline-none"
       />
     </div>
   );
