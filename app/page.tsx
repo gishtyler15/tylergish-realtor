@@ -3,6 +3,7 @@ import Image from "next/image";
 import { cities, siteConfig } from "@/data/cities";
 import BuyerLeadForm from "@/components/BuyerLeadForm";
 import SellerLeadForm from "@/components/SellerLeadForm";
+import Reveal from "@/components/Reveal";
 
 export default function HomePage() {
   return (
@@ -52,13 +53,15 @@ export default function HomePage() {
           </div>
 
           <div className="relative animate-fade-in justify-self-center order-1 lg:order-2">
-            <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden">
+            <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-navy-50/80 to-transparent rounded-full blur-2xl -z-10" />
+            <div className="relative w-full max-w-[380px]">
               <Image
-                src="/images/tyler-headshot.png"
+                src="/images/tyler-cutout.png"
                 alt="Tyler Gish, REALTOR® with eXp Realty"
-                fill
+                width={1020}
+                height={1537}
                 priority
-                className="object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
@@ -89,7 +92,7 @@ export default function HomePage() {
 
       {/* ABOUT */}
       <section className="container-page py-20 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
             <p className="eyebrow mb-4">About Tyler</p>
             <h2 className="font-display text-3xl md:text-4xl text-navy leading-tight">
@@ -111,7 +114,7 @@ export default function HomePage() {
               it&apos;s the only one that matters — because to you, it is.
             </p>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <div className="container-page">
@@ -120,33 +123,34 @@ export default function HomePage() {
 
       {/* SERVICE AREAS */}
       <section className="container-page py-20 md:py-24">
-        <div className="max-w-2xl mb-12">
+        <Reveal className="max-w-2xl mb-12">
           <p className="eyebrow mb-4">Where Tyler Works</p>
           <h2 className="font-display text-3xl md:text-4xl text-navy leading-tight">
             Seven communities. One local agent who knows all of them.
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {cities.map((city) => (
-            <Link
-              key={city.slug}
-              href={`/${city.slug}`}
-              className="group relative overflow-hidden rounded-xl border border-slate-100 bg-white p-6 hover:border-brass-400 hover:shadow-lg transition-all"
-            >
-              <p className="font-display text-xl text-navy mb-1.5">
-                {city.name}
-              </p>
-              <p className="text-xs text-slate uppercase tracking-wide mb-3">
-                {city.county}
-              </p>
-              <p className="text-sm text-slate leading-relaxed">
-                {city.heroLine}
-              </p>
-              <span className="mt-4 inline-flex items-center text-sm font-semibold text-brass-700 group-hover:gap-2 gap-1 transition-all">
-                View market guide →
-              </span>
-            </Link>
+          {cities.map((city, i) => (
+            <Reveal key={city.slug} delay={i * 60}>
+              <Link
+                href={`/${city.slug}`}
+                className="group relative overflow-hidden rounded-xl border border-slate-100 bg-white p-6 hover:border-brass-400 hover:shadow-lg transition-all block h-full"
+              >
+                <p className="font-display text-xl text-navy mb-1.5">
+                  {city.name}
+                </p>
+                <p className="text-xs text-slate uppercase tracking-wide mb-3">
+                  {city.county}
+                </p>
+                <p className="text-sm text-slate leading-relaxed">
+                  {city.heroLine}
+                </p>
+                <span className="mt-4 inline-flex items-center text-sm font-semibold text-brass-700 group-hover:gap-2 gap-1 transition-all">
+                  View market guide →
+                </span>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -158,12 +162,12 @@ export default function HomePage() {
       {/* WHY WORK WITH TYLER */}
       <section className="bg-navy-50 py-20 md:py-24">
         <div className="container-page">
-          <div className="max-w-2xl mb-12">
+          <Reveal className="max-w-2xl mb-12">
             <p className="eyebrow mb-4">Why Work With Tyler</p>
             <h2 className="font-display text-3xl md:text-4xl text-navy leading-tight">
               What you get on day one — and every day after.
             </h2>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -206,14 +210,14 @@ export default function HomePage() {
 
       {/* LEAD CAPTURE */}
       <section id="lead-capture" className="container-page py-20 md:py-24">
-        <div className="max-w-2xl mx-auto text-center mb-12">
+        <Reveal className="max-w-2xl mx-auto text-center mb-12">
           <p className="eyebrow mb-4">Get Started</p>
           <h2 className="font-display text-3xl md:text-4xl text-navy leading-tight">
             Tell Tyler what you&apos;re looking for.
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <Reveal className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto" delay={100}>
           <div className="rounded-2xl border border-slate-100 p-7 md:p-8">
             <h3 className="font-display text-xl text-navy mb-1">
               I&apos;m Buying
@@ -232,7 +236,7 @@ export default function HomePage() {
             </p>
             <SellerLeadForm />
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <div className="container-page">
@@ -242,12 +246,12 @@ export default function HomePage() {
       {/* TESTIMONIALS */}
       <section className="bg-navy-50 py-20 md:py-24">
         <div className="container-page">
-          <div className="max-w-2xl mb-12">
+          <Reveal className="max-w-2xl mb-12">
             <p className="eyebrow mb-4">What Clients Say</p>
             <h2 className="font-display text-3xl md:text-4xl text-navy leading-tight">
               Reviews from Northwest Ohio buyers and sellers.
             </h2>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
@@ -269,20 +273,22 @@ export default function HomePage() {
                 detail: "Home seller, Sandusky",
               },
             ].map((t, i) => (
-              <div key={i} className="bg-white rounded-xl p-7 border border-slate-100">
-                <div className="flex gap-1 text-brass mb-4" aria-hidden>
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <svg key={j} width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21Z" />
-                    </svg>
-                  ))}
+              <Reveal key={i} delay={i * 80}>
+                <div className="bg-white rounded-xl p-7 border border-slate-100 h-full">
+                  <div className="flex gap-1 text-brass mb-4" aria-hidden>
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <svg key={j} width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21Z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-sm text-slate leading-relaxed mb-5">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <p className="text-sm font-semibold text-navy">{t.name}</p>
+                  <p className="text-xs text-slate-400">{t.detail}</p>
                 </div>
-                <p className="text-sm text-slate leading-relaxed mb-5">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <p className="text-sm font-semibold text-navy">{t.name}</p>
-                <p className="text-xs text-slate-400">{t.detail}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
           <p className="text-xs text-slate-400 mt-6">
@@ -293,23 +299,25 @@ export default function HomePage() {
 
       {/* FINAL CTA */}
       <section className="container-page py-20 md:py-28 text-center">
-        <h2 className="font-display text-3xl md:text-5xl text-navy leading-tight max-w-2xl mx-auto">
-          Ready To Make Your Next Move?
-        </h2>
-        <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            href="/contact"
-            className="rounded-full bg-navy px-8 py-3.5 text-sm font-semibold text-white hover:bg-navy-600 transition-colors"
-          >
-            Schedule Consultation
-          </Link>
-          <a
-            href={`tel:${siteConfig.phoneRaw}`}
-            className="rounded-full border border-navy/20 px-8 py-3.5 text-sm font-semibold text-navy hover:bg-navy-50 transition-colors"
-          >
-            Contact Tyler
-          </a>
-        </div>
+        <Reveal>
+          <h2 className="font-display text-3xl md:text-5xl text-navy leading-tight max-w-2xl mx-auto">
+            Ready To Make Your Next Move?
+          </h2>
+          <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/contact"
+              className="rounded-full bg-navy px-8 py-3.5 text-sm font-semibold text-white hover:bg-navy-600 transition-colors"
+            >
+              Schedule Consultation
+            </Link>
+            <a
+              href={`tel:${siteConfig.phoneRaw}`}
+              className="rounded-full border border-navy/20 px-8 py-3.5 text-sm font-semibold text-navy hover:bg-navy-50 transition-colors"
+            >
+              Contact Tyler
+            </a>
+          </div>
+        </Reveal>
       </section>
     </main>
   );

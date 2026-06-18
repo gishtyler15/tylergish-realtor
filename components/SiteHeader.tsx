@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/data/cities";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const navLinks = [
   { href: "/buyers", label: "Buyers" },
@@ -17,8 +18,8 @@ export default function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
-      <div className="container-page flex items-center justify-between h-[72px]">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 relative">
+      <ScrollProgress />      <div className="container-page flex items-center justify-between h-[72px]">
         <Link href="/" className="flex items-center gap-3 group">
           <span className="font-display text-xl text-navy tracking-tight">
             Tyler Gish
