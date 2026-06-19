@@ -15,6 +15,7 @@ export interface CityData {
   keywords: string[];
   lat: number;
   lng: number;
+  images?: string[];
 }
 
 export const cities: CityData[] = [
@@ -49,6 +50,7 @@ export const cities: CityData[] = [
     keywords: ["Realtor Clyde Ohio", "Homes For Sale Clyde Ohio", "Clyde Ohio real estate agent"],
     lat: 41.3025,
     lng: -82.9763,
+    images: ["/images/cities/clyde-1.jpg", "/images/cities/clyde-2.jpg", "/images/cities/clyde-3.jpg"],
   },
   {
     slug: "fremont-ohio-realtor",
@@ -81,6 +83,7 @@ export const cities: CityData[] = [
     keywords: ["Realtor Fremont Ohio", "Homes For Sale Fremont Ohio", "Fremont Ohio real estate agent"],
     lat: 41.3501,
     lng: -83.1219,
+    images: ["/images/cities/fremont-1.jpg", "/images/cities/fremont-2.jpg", "/images/cities/fremont-3.jpg"],
   },
   {
     slug: "sandusky-ohio-realtor",
@@ -113,6 +116,7 @@ export const cities: CityData[] = [
     keywords: ["Realtor Sandusky Ohio", "Homes For Sale Sandusky Ohio", "Lake Erie real estate agent"],
     lat: 41.4489,
     lng: -82.7079,
+    images: ["/images/cities/sandusky-1.jpg", "/images/cities/sandusky-2.jpg", "/images/cities/sandusky-3.jpg"],
   },
   {
     slug: "port-clinton-ohio-realtor",
@@ -145,6 +149,7 @@ export const cities: CityData[] = [
     keywords: ["Realtor Port Clinton Ohio", "Port Clinton waterfront homes", "Port Clinton Ohio real estate agent"],
     lat: 41.5104,
     lng: -82.9377,
+    images: ["/images/cities/port-clinton-1.jpg", "/images/cities/port-clinton-2.jpg", "/images/cities/port-clinton-3.jpg"],
   },
   {
     slug: "bellevue-ohio-realtor",
@@ -176,6 +181,7 @@ export const cities: CityData[] = [
     keywords: ["Realtor Bellevue Ohio", "Homes For Sale Bellevue Ohio", "Bellevue Ohio real estate agent"],
     lat: 41.2739,
     lng: -82.8418,
+    images: ["/images/cities/bellevue-1.jpg", "/images/cities/bellevue-2.jpg", "/images/cities/bellevue-3.jpg"],
   },
   {
     slug: "marblehead-ohio-realtor",
@@ -208,6 +214,7 @@ export const cities: CityData[] = [
     keywords: ["Realtor Marblehead Ohio", "Marblehead waterfront homes", "Lakeside Marblehead real estate"],
     lat: 41.5392,
     lng: -82.7307,
+    images: ["/images/cities/marblehead-1.jpg", "/images/cities/marblehead-2.jpg", "/images/cities/marblehead-3.jpg"],
   },
   {
     slug: "norwalk-ohio-realtor",
@@ -239,6 +246,7 @@ export const cities: CityData[] = [
     keywords: ["Realtor Norwalk Ohio", "Homes For Sale Norwalk Ohio", "Norwalk Ohio real estate agent"],
     lat: 41.2429,
     lng: -82.6157,
+    images: ["/images/cities/norwalk-1.jpg", "/images/cities/norwalk-2.jpg", "/images/cities/norwalk-3.jpg"],
   },
 ];
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/data/cities";
+import VeteranHomeIcon from "@/components/VeteranHomeIcon";
 
 export const metadata: Metadata = {
   title: "About Tyler Gish | Army Veteran & Northwest Ohio REALTOR®",
@@ -23,6 +24,7 @@ export default function AboutPage() {
             />
           </div>
           <div>
+            <VeteranHomeIcon className="w-16 h-16 mb-5" />
             <p className="eyebrow mb-4">About Tyler</p>
             <h1 className="font-display text-4xl md:text-5xl text-navy leading-tight mb-6">
               Army Veteran. Husband. Father. Northwest Ohio REALTOR®.

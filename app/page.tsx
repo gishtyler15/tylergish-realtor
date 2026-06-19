@@ -4,12 +4,26 @@ import { cities, siteConfig } from "@/data/cities";
 import BuyerLeadForm from "@/components/BuyerLeadForm";
 import SellerLeadForm from "@/components/SellerLeadForm";
 import Reveal from "@/components/Reveal";
+import VeteranHomeIcon from "@/components/VeteranHomeIcon";
+import CityCard from "@/components/CityCard";
 
 export default function HomePage() {
   return (
     <main>
       {/* HERO */}
       <section className="relative overflow-hidden">
+        <div className="absolute inset-0 -z-20">
+          <Image
+            src="/images/hero-home.jpg"
+            alt=""
+            fill
+            priority
+            className="object-cover object-[70%_center]"
+          />
+        </div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-white via-white/92 to-white/55" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-white via-transparent to-white/30" />
+
         <div className="container-page relative pt-14 pb-16 md:pt-20 md:pb-20 grid grid-cols-1 lg:grid-cols-[1fr_0.85fr] gap-14 items-center">
           <div className="animate-fade-up order-2 lg:order-1">
             <p className="eyebrow mb-5">
@@ -53,7 +67,7 @@ export default function HomePage() {
           </div>
 
           <div className="relative animate-fade-in justify-self-center order-1 lg:order-2">
-            <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-navy-50/80 to-transparent rounded-full blur-2xl -z-10" />
+            <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-white/90 via-white/40 to-transparent rounded-full blur-2xl -z-10" />
             <div className="relative w-full max-w-[380px]">
               <Image
                 src="/images/tyler-cutout.png"
@@ -61,14 +75,14 @@ export default function HomePage() {
                 width={1020}
                 height={1537}
                 priority
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-contain drop-shadow-xl"
               />
             </div>
           </div>
         </div>
 
         {/* QUIET STAT STRIP */}
-        <div className="border-y border-slate-100 bg-navy-50/60">
+        <div className="relative border-y border-slate-100 bg-white/90 backdrop-blur-sm">
           <div className="container-page py-7 grid grid-cols-3 gap-4 text-center">
             <div>
               <p className="font-display text-2xl md:text-3xl text-navy">7</p>
@@ -94,6 +108,7 @@ export default function HomePage() {
       <section className="container-page py-20 md:py-24">
         <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
+            <VeteranHomeIcon className="w-16 h-16 mb-5" />
             <p className="eyebrow mb-4">About Tyler</p>
             <h2 className="font-display text-3xl md:text-4xl text-navy leading-tight">
               A veteran&apos;s standard, applied to real estate.
@@ -133,23 +148,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {cities.map((city, i) => (
             <Reveal key={city.slug} delay={i * 60}>
-              <Link
-                href={`/${city.slug}`}
-                className="group relative overflow-hidden rounded-xl border border-slate-100 bg-white p-6 hover:border-brass-400 hover:shadow-lg transition-all block h-full"
-              >
-                <p className="font-display text-xl text-navy mb-1.5">
-                  {city.name}
-                </p>
-                <p className="text-xs text-slate uppercase tracking-wide mb-3">
-                  {city.county}
-                </p>
-                <p className="text-sm text-slate leading-relaxed">
-                  {city.heroLine}
-                </p>
-                <span className="mt-4 inline-flex items-center text-sm font-semibold text-brass-700 group-hover:gap-2 gap-1 transition-all">
-                  View market guide →
-                </span>
-              </Link>
+              <CityCard city={city} />
             </Reveal>
           ))}
         </div>

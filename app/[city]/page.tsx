@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { cities, getCityBySlug, siteConfig } from "@/data/cities";
 import BuyerLeadForm from "@/components/BuyerLeadForm";
+import CityGallery from "@/components/CityGallery";
 import { localBusinessSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
@@ -92,6 +93,9 @@ export default async function CityPage({
             </h2>
             <p className="text-slate leading-relaxed">{city.overview}</p>
           </div>
+
+          {/* PHOTO GALLERY */}
+          {city.images && <CityGallery images={city.images} cityName={city.name} />}
 
           {/* MARKET */}
           <div>
